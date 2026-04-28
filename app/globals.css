@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* * {
+    @apply border-slate-200;
+  }  Removed due to Tailwind limitation */
+  
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+  
+  /* Improve font rendering */
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Custom scrollbar for compact data views */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-slate-100 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+  
+  /* Data table styles */
+  .data-table {
+    @apply w-full text-sm;
+  }
+  
+  .data-table thead {
+    @apply bg-slate-50 border-b border-slate-200;
+  }
+  
+  .data-table th {
+    @apply px-3 py-2 text-left font-medium text-slate-600 text-xs uppercase tracking-wider;
+  }
+  
+  .data-table td {
+    @apply px-3 py-2 text-slate-700 border-b border-slate-100;
+  }
+  
+  .data-table tbody tr {
+    @apply hover:bg-slate-50 transition-colors;
+  }
+}
+
+@layer utilities {
+  /* Amharic script support */
+  .font-amharic {
+    font-family: 'Noto Sans Ethiopic', 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Text truncation */
+  .truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
